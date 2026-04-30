@@ -1,0 +1,60 @@
+# ───────────── Unity ─────────────
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ee]xported[Oo]bj/
+[Uu]ser[Ss]ettings/
+[Mm]emory[Cc]aptures/
+[Ll]ogs/
+
+**/Assets/AssetStoreTools*
+/Assets/Plugins/PlasticSCM*
+
+**/Assets/AddressableAssetsData/*/*.bin*
+**/Assets/StreamingAssets/aa.meta
+**/Assets/StreamingAssets/aa/*
+
+~UnityDirMonSyncFile~*
+*.private
+*.private.meta
+*.private.[0-9]*
+*.private.[0-9]*.meta
+
+# ───────────── Build outputs ─────────────
+*.apk
+*.aab
+*.app
+*.unitypackage
+
+# ───────────── IDE ─────────────
+.vs/
+.vscode/
+.idea/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# ───────────── OS ─────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ───────────── Crash / Analytics ─────────────
+sysinfo.txt
+crashlytics-build.properties
