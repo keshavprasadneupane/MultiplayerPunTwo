@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 55507817}
   - component: {fileID: 55507816}
   - component: {fileID: 55507815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,6 +537,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 759483331}
+  - {fileID: 1960588497}
+  - {fileID: 1132590299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &718958019
@@ -552,8 +554,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomManager
   mainCamera: {fileID: 519420031}
-  _playerPrefab: {fileID: 8703771887739574371, guid: 52f4b5e845ccdbee093b304555aeccc4, type: 3}
   _spawnPoint: {fileID: 759483331}
+  _playerPrefab: {fileID: 8703771887739574371, guid: 52f4b5e845ccdbee093b304555aeccc4, type: 3}
+  player1Color: {r: 1, g: 0, b: 0, a: 1}
+  player2Color: {r: 0, g: 0, b: 1, a: 1}
+  _ballPrefab: {fileID: 8649360455617954702, guid: 61e91a65151abef798425b6f680d589b, type: 3}
+  _ballSpawnPoint1: {fileID: 1960588497}
+  _ballSpawnPoint2: {fileID: 1132590299}
+  ballColor1: {r: 0, g: 0.8679245, b: 0.06896251, a: 1}
+  ballColor2: {r: 0.1655155, g: 0.4716981, b: 0.077874675, a: 1}
 --- !u!1 &759483330
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759483331}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: PlayerSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -585,6 +594,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 718958018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1132590298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132590299}
+  m_Layer: 0
+  m_Name: BallSpawnPoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1132590299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132590298}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.25, y: -0.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 718958018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169151951
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +637,7 @@ GameObject:
   - component: {fileID: 1169151954}
   - component: {fileID: 1169151953}
   - component: {fileID: 1169151952}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1190241249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boundry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +882,7 @@ GameObject:
   - component: {fileID: 1305432883}
   - component: {fileID: 1305432882}
   - component: {fileID: 1305432881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,6 +1036,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1190241249}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1960588496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960588497}
+  m_Layer: 0
+  m_Name: BallSpawnPoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960588497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960588496}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.35, y: 0.99, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 718958018}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001091124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +1079,7 @@ GameObject:
   - component: {fileID: 2001091128}
   - component: {fileID: 2001091127}
   - component: {fileID: 2001091126}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1024,7 +1095,7 @@ Transform:
   m_GameObject: {fileID: 2001091124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1212, y: 5.11, z: 0}
+  m_LocalPosition: {x: 0.09, y: 3.93, z: 0}
   m_LocalScale: {x: 17.579046, y: 0.7183, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
