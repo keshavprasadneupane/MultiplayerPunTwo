@@ -40,6 +40,9 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - SyncColor
+  - RPC_CleanupAndConfirm
+  - RPC_ConfirmCleanup
+  - OnAllPlayersRequestedRestart
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

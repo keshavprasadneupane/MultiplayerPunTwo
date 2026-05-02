@@ -2,60 +2,51 @@
 using UnityEngine.UI;
 
 
-namespace Photon.Chat.DemoChat
-{
-    [RequireComponent(typeof(ChatNewGui))]
-    public class NamePickNewGui : MonoBehaviour
-    {
-        private const string UserNamePlayerPref = "NamePickUserName";
+namespace Photon.Chat.DemoChat {
+	[RequireComponent(typeof(ChatNewGui))]
+	public class NamePickNewGui : MonoBehaviour {
+		private const string UserNamePlayerPref = "NamePickUserName";
 
-        public ChatNewGui chatNewComponent;
+		public ChatNewGui chatNewComponent;
 
-        public InputField idInput;
+		public InputField idInput;
 
-        public void Start()
-        {
-            InitChatNewComponent();
+		public void Start() {
+			InitChatNewComponent();
 
-            string prefsName = PlayerPrefs.GetString(NamePickNewGui.UserNamePlayerPref);
-            if (!string.IsNullOrEmpty(prefsName))
-            {
-                this.idInput.text = prefsName;
-            }
-        }
+			string prefsName = PlayerPrefs.GetString(UserNamePlayerPref);
+			if (!string.IsNullOrEmpty(prefsName)) {
+				this.idInput.text = prefsName;
+			}
+		}
 
 
-        // new UI will fire "EndEdit" event also when loosing focus. So check "enter" key and only then StartChat.
-        public void EndEditOnEnter()
-        {
-            if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter))
-            {
-                this.StartChat();
-            }
-        }
+		// new UI will fire "EndEdit" event also when loosing focus. So check "enter" key and only then StartChat.
+		public void EndEditOnEnter() {
+			if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.KeypadEnter)) {
+				this.StartChat();
+			}
+		}
 
-        public void StartChat()
-        {
-            if (!InitChatNewComponent())
-            {
-                return;
-            }
-            this.chatNewComponent.UserName = this.idInput.text.Trim();
-            this.chatNewComponent.Connect();
-            this.enabled = false;
+		public void StartChat() {
+			if (!InitChatNewComponent()) {
+				return;
+			}
+			this.chatNewComponent.UserName = this.idInput.text.Trim();
+			this.chatNewComponent.Connect();
+			this.enabled = false;
 
-            PlayerPrefs.SetString(NamePickNewGui.UserNamePlayerPref, this.chatNewComponent.UserName);
-        }
+			PlayerPrefs.SetString(UserNamePlayerPref, this.chatNewComponent.UserName);
+		}
 
-        public bool InitChatNewComponent()
-        {
-            #if UNITY_6000_0_OR_NEWER
-            this.chatNewComponent = GameObject.FindFirstObjectByType<ChatNewGui>();
-            #else
+		public bool InitChatNewComponent() {
+#if UNITY_6000_0_OR_NEWER
+			this.chatNewComponent = FindFirstObjectByType<ChatNewGui>();
+#else
             this.chatNewComponent = FindObjectOfType<ChatNewGui>();
-            #endif
+#endif
 
-            return this.chatNewComponent != null;
-        }
-    }
+			return this.chatNewComponent != null;
+		}
+	}
 }
